@@ -30,6 +30,7 @@ static (string name, string lastName, int age, string[] pets, string[] favColors
         strPetNumber = Console.ReadLine();
     }
     while (CheckNumber(strAge, out intPetNumber));
+    User.pets = PetsNames(intPetNumber);
 
     string strFavColorNumber;
     int intFavColorNumber;
@@ -54,4 +55,15 @@ static bool CheckNumber(string strNumber, out int corrNumber)
     }
     corrNumber = 0;
     return true;
+}
+
+static string[] PetsNames(int number)
+{
+    string[] names = new string[number];
+    for (int i = 0; i < names.Length; i++)
+    {
+        Console.Write($"Имя питомца {i + 1}");
+        names[i] = Console.ReadLine();
+    }
+    return names;
 }

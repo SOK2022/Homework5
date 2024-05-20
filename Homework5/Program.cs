@@ -40,6 +40,7 @@ static (string name, string lastName, int age, string[] pets, string[] favColors
         strFavColorNumber = Console.ReadLine();
     }
     while (CheckNumber(strAge, out intFavColorNumber));
+    User.favColors = FavColors(intFavColorNumber);
 
     return User;
 }
@@ -66,4 +67,15 @@ static string[] PetsNames(int number)
         names[i] = Console.ReadLine();
     }
     return names;
+}
+
+static string[] FavColors(int number)
+{
+    string[] colors = new string[number];
+    for (int i = 0; i < colors.Length; i++)
+    {
+        Console.Write($"Цвет {i + 1}");
+        colors[i] = Console.ReadLine();
+    }
+    return colors;
 }
